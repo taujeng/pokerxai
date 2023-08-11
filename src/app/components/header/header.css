@@ -1,0 +1,29 @@
+header {
+    background: #111111;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header img {
+    height: 250px;
+
+    object-fit: cover;
+}
+
+header nav ul{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+header nav ul li {
+    margin: 0 20px;
+    list-style: none;
+}
