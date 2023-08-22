@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Header from './components/header/Header'
 import CommunityProvider from './contexts/CommunityContext'
+import HandProvider from './contexts/HandContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +24,10 @@ export default function RootLayout({
         {/* assuming I put NavBar over here */}
         <Header />
           <CommunityProvider>
-            {children}
+            <HandProvider>
+              {children}
+            </HandProvider>
+
           </CommunityProvider>
         
       </body>

@@ -4,6 +4,7 @@
     width: 100%;
     background-color: #36454F;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
