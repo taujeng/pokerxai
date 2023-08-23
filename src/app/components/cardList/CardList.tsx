@@ -3,7 +3,7 @@ import Image from 'next/image'
 import './cardList.css'
 
 interface CardListProps {
-  onSelectCard: () => void;
+  onSelectCard: (selectedCard:string) => void;
   onClose: () => void;
 }
 
@@ -15,19 +15,35 @@ const CardList: React.FC<CardListProps> = ( {onSelectCard, onClose} ) => {
       <div className="cardList-content" onClick={e => e.stopPropagation()}>
         <section className="suit-col">
           {order.map((x:string, index:number) => (<button key={index}
-            onClick={()=>onSelectCard(x)}
+            onClick={()=>{
+              onSelectCard(x+"s")
+              onClose()
+            }}
           ><img src={`/images/cards/${x}s.svg`} alt={`${x}s`} /></button>))}
         </section>
         <section className="suit-col">
-          {order.map((x:string, index:number) => (<button key={index}><img src={`/images/cards/${x}h.svg`} alt={`${x}h`} /></button>))}
+          {order.map((x:string, index:number) => (<button key={index}
+              onClick={()=>{
+                onSelectCard(x+"h")
+                onClose()
+              }}
+            ><img src={`/images/cards/${x}h.svg`} alt={`${x}h`} /></button>))}
         </section>
         <section className="suit-col">
-          {order.map((x:string, index:number) => (<button key={index}><img src={`/images/cards/${x}d.svg`} alt={`${x}d`} /></button>))}
-
+          {order.map((x:string, index:number) => (<button key={index}
+              onClick={()=>{
+                onSelectCard(x+"d")
+                onClose()
+              }}
+            ><img src={`/images/cards/${x}d.svg`} alt={`${x}d`} /></button>))}
         </section>
         <section className="suit-col">
-          {order.map((x:string, index:number) => (<button key={index}><img src={`/images/cards/${x}c.svg`} alt={`${x}c`} /></button>))}
-
+          {order.map((x:string, index:number) => (<button key={index}
+              onClick={()=>{
+                onSelectCard(x+"c")
+                onClose()
+              }}
+            ><img src={`/images/cards/${x}c.svg`} alt={`${x}c`} /></button>))}
         </section>
       </div>
 

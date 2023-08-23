@@ -25,10 +25,12 @@ const Hand = () => {
         }}
       /></div>
       {/* <button onClick={()=> setShowList(!showList)}>show cards</button> */}
-      {showList && <CardList onSelectCard={(selectCard) => {
+      {showList && <CardList onSelectCard={(selectedCard) => {
+        console.log(selectedCard)
         const newHand = [...handCards];
-        newHand[handIndex] = selectCard;
+        newHand[handIndex] = selectedCard;
         setHandCards(newHand);
+        console.log(handCards)
       }}
       onClose={()=> setShowList(false)}/>}
     </section>
