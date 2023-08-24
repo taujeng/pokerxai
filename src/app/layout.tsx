@@ -21,14 +21,12 @@ export default function RootLayout({
     <html lang="en">
 
       <body className={inter.className}>
-        {/* assuming I put NavBar over here */}
         <Header />
-          <CommunityProvider>
-            <HandProvider>
-              {children}
-            </HandProvider>
-
-          </CommunityProvider>
+        <CommunityProvider>
+          <HandProvider>
+            {children}
+          </HandProvider>
+        </CommunityProvider>
         
       </body>
     </html>
